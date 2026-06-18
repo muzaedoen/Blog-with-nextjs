@@ -1,0 +1,22 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Kita kunci warna biru premium khusus untuk blogmu
+        brand: {
+          50: '#f0f7ff',
+          100: '#e0effe',
+          500: '#0284c7',
+          600: '#0369a1',
+        }
+      }
+    },
+  },
+  plugins: [],
+};
