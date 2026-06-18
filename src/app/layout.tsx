@@ -3,52 +3,43 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Premium Tech & Ads Blog",
-  description: "Portal informasi modern dan terpercaya",
-  verification: {
-    google: "KODE_VERIFIKASI_KAMU",
-  },
+  title: "Premium Centered Blog",
+  description: "Blog kotak besar premium dengan fitur Dark Mode",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className="bg-[#f4f8fa] text-slate-800 antialiased flex flex-col min-h-screen font-sans">
+      {/* Background biru muda di light mode, dan abu-abu gelap di dark mode */}
+      <body className="bg-blue-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 antialiased flex flex-col min-h-screen transition-colors duration-300">
         
-        {/* Navbar Premium dengan Efek Glassmorphism (Blur Transparan) */}
-        <header className="bg-white/80 backdrop-blur-md border-b border-sky-100 sticky top-0 z-50">
-          <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" className="text-2xl font-black text-sky-600 tracking-tight flex items-center gap-2">
-              <span className="bg-sky-600 text-white px-2 py-1 rounded-lg text-sm">PRO</span>
-              <span>MediaBlog</span>
+        {/* Header Presisi di Tengah */}
+        <header className="bg-white/90 dark:bg-slate-800/90 border-b border-blue-100 dark:border-slate-700 sticky top-0 z-50">
+          <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" className="text-2xl font-black text-blue-600 dark:text-blue-400 tracking-tight">
+              MYBLOG
             </a>
-            <div className="flex space-x-8 font-semibold text-sm tracking-wide text-slate-600">
-              <a href="/" className="hover:text-sky-600 transition-colors">Home</a>
-              <a href="/about" className="hover:text-sky-600 transition-colors">About</a>
-              <a href="/contact" className="hover:text-sky-600 transition-colors">Contact</a>
+            <div className="flex space-x-6 font-bold text-sm">
+              <a href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Home</a>
+              <a href="/about" className="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+              <a href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
             </div>
-          </nav>
+          </div>
         </header>
 
-        {/* Konten Utama */}
-        <main className="flex-grow max-w-6xl w-full mx-auto px-6 py-10">
+        {/* Konten Utama - Di-center dengan max-w-4xl mx-auto */}
+        <main className="flex-grow max-w-4xl w-full mx-auto px-6 py-10">
           {children}
         </main>
 
-        {/* Footer Minimalis Elegan */}
-        <footer className="bg-white border-t border-sky-100 py-8">
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500 gap-4">
-            <div>
-              &copy; {new Date().getFullYear()} **MediaBlog**. All Rights Reserved.
-            </div>
-            <div className="flex gap-6 text-xs">
-              <a href="#" className="hover:underline">Privacy Policy</a>
-              <a href="#" className="hover:underline">Terms of Service</a>
-            </div>
+        {/* Footer Presisi di Tengah */}
+        <footer className="bg-white dark:bg-slate-800 border-t border-blue-100 dark:border-slate-700 py-6">
+          <div className="max-w-4xl mx-auto px-6 text-center text-sm text-slate-500 dark:text-slate-400">
+            &copy; {new Date().getFullYear()} **MYBLOG**. All Rights Reserved.
           </div>
         </footer>
 
-        {/* Google Adsense Auto Ads */}
+        {/* Script Iklan */}
         <Script 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" 
           strategy="afterInteractive" 
